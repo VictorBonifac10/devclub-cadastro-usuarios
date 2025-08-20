@@ -1,33 +1,41 @@
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
+import api from '../../services/api'
 
 import {
   Title,
   Container,
   ContainerInputs,
   Input,
-  TopBackground,
   Form,
   InputLabel,
-  Button
 } from "./styles"
 
-import UsersImg from '../../assets/users.png'
+import Button from '../../components/Button'
+import Background from '../../components/TopBackground'
 
 function Home() { //Criando função (sempre c/ letra maiúscula)
   const inputName = useRef()
   const inputAge = useRef()
   const inputEmail = useRef()
 
-  function registerNewUser() {
-    console.log(inputName.current.value)
+  const navigate = useNavigate()
+
+  async function registerNewUser() {
+    const data = await api.post('/usuarios', {
+      email: inputEmail.current.value,
+      age: parseInt(inputAge.current.value),
+      name: inputName.current.value
+    })
+
+    console.log(data)
   }
 
   return ( //dentro de return não podemos ter mais de uma tag pai, caso não queira usar, podemos usar fragment <></>
 
     <Container>
-      <TopBackground>
-        <img src={UsersImg} alt="img-users" />
-      </TopBackground>
+      <Background>
+      </Background>
 
       <Form>
         <Title>Cadastro de Usuários</Title>
@@ -45,8 +53,9 @@ function Home() { //Criando função (sempre c/ letra maiúscula)
           <InputLabel>Email<span> *</span></InputLabel>
           <Input type="email" placeholder="E-mail do Usuário" ref={inputEmail} />
         </div>
-        <Button type='button' onClick={registerNewUser}>Cadastrar Usuários</Button>
+        <Button type='button' onClick={registerNewUser} theme="primary">Cadastrar Usuários</Button>
       </Form>
+      <Button type='button' onClick={() => navigate('./lista-de-usuarios')}>Lista de Usuários</Button>
     </Container>
 
   )
