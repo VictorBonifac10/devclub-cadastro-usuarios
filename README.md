@@ -1,4 +1,4 @@
-# Cadastro de Usuários
+## 👤 Cadastro de Usuários
 Formulário de cadastro de usuários desenvolvido em React com integração de API e armazenamento em Banco de Dados NoSQL (MongoDB). Os usuários são cadastrados, e recuperados na listagem de usuários.
 
 ## 💻 Demonstração
@@ -27,16 +27,3 @@ Para rodar o Front-End, instale as dependencias com "yarn install" e inicie a ap
 
 - [GitHub Profile](https://github.com/VictorBonifac10) 
 - [LinkedIn](https://www.linkedin.com/in/victor-alves-bonifacio/)
-
-## React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
